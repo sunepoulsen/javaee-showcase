@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+
+    <changeSet id="1" author="stp">
+        <createTable tableName="citycodes">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="code" type="varchar(4)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="street" type="varchar(200)" />
+            <column name="firm" type="varchar(200)" />
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="stp">
+        <loadData tableName="citycodes" file="docker/database/schema/citycodes.csv" separator=";">
+            <column name="code"/>
+            <column name="name"/>
+            <column name="street"/>
+            <column name="firm"/>
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

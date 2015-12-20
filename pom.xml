@@ -5,11 +5,17 @@
     <groupId>dk.sunepoulsen</groupId>
     <artifactId>jes</artifactId>
     <version>1.0.0</version>
+    <modules>
+        <module>apps</module>
+    </modules>
     <packaging>pom</packaging>
     
     <name>JavaEE Showcase</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <version.mvn.compiler>3.2</version.mvn.compiler>
+        <version.jdk>1.8</version.jdk>
     </properties>
     
 </project>
